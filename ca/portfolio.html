@@ -322,27 +322,14 @@ textarea,input,select{font-size:16px;max-width:100%;}
   .ment-contacto-anchor input,.ment-contacto-anchor textarea{font-size:16px!important;}
 }
 </style>
-<script id="ment-scale-script">
-(function () {
-  function scale() {
-    var mp = document.getElementById('masterPage');
-    if (!mp) return;
-    var w = window.innerWidth || document.documentElement.clientWidth;
-    if (w >= 1024) { mp.style.transform = ''; mp.style.width = ''; return; }
-    var s = Math.min(1, w / 980);
-    mp.style.setProperty('--ment-scale', s);
-    // El contenedor debe ocupar la altura escalada para no dejar hueco.
-    var h = mp.scrollHeight * s;
-    var wrap = mp.parentElement;
-    if (wrap) wrap.style.minHeight = h + 'px';
-  }
-  scale();
-  window.addEventListener('resize', scale);
-  window.addEventListener('load', scale);
-})();
-</script>
-  <meta name="theme-color" content="#000000"/>
+<meta name="theme-color" content="#000000"/>
   <meta property="og:locale" content="ca_ES"/>
+
+<style id="ment-overflow-fix">
+/* Evita que los elementos posicionados del clon Wix desborden horizontalmente */
+#SITE_HEADER,#SITE_FOOTER,#PAGES_CONTAINER,#masterPage,#SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{max-width:100%;overflow-x:hidden;}
+#comp-iohip3pr,#comp-ioe51y89{max-width:100%;overflow:hidden;}
+</style>
 </head>
 <body class='' >
 
@@ -612,5 +599,32 @@ textarea,input,select{font-size:16px;max-width:100%;}
 })();
 </script>
 <!-- === FIN MENT CREATIVA === -->
-<script src="../assets/js/ment-portfolio.js" defer></script></body>
+<script src="../assets/js/ment-portfolio.js" defer></script>
+<script id="ment-scale-force">
+(function () {
+  function fit() {
+    var mp = document.getElementById('masterPage');
+    if (!mp) return;
+    var w = window.innerWidth || document.documentElement.clientWidth || 980;
+    if (w >= 1024) {
+      mp.style.transform = '';
+      mp.style.width = '';
+      return;
+    }
+    var s = Math.min(1, w / 980);
+    mp.style.width = '980px';
+    mp.style.transform = 'scale(' + s + ')';
+    mp.style.transformOrigin = 'top left';
+    var wrap = mp.parentElement;
+    if (wrap) {
+      wrap.style.overflowX = 'hidden';
+      wrap.style.minHeight = Math.round(mp.scrollHeight * s) + 'px';
+    }
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+})();
+</script>
+</body>
 </html>
