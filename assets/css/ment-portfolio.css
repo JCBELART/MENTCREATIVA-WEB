@@ -1,0 +1,29 @@
+/* Portfolio estático: sustituye el Collage de Wix que depende deliframe vacío. */
+#comp-iohcdgax{height:auto!important}
+#ment-portfolio-gallery{
+  width:1125px;max-width:100%;min-height:0;
+  margin-left:calc((100% - 980px) * 0.5 - 72px);
+  column-count:4;column-gap:5px;
+}
+@media (max-width:900px){#ment-portfolio-gallery{width:100%;margin-left:0;column-count:3}}
+@media (max-width:650px){#ment-portfolio-gallery{column-count:2}}
+@media (max-width:430px){#ment-portfolio-gallery{column-count:1}}
+#ment-portfolio-gallery .ment-cell{
+  display:inline-block;width:100%;margin:0 0 5px;position:relative;
+  overflow:hidden;background:#2f2e2e;break-inside:avoid;
+}
+#ment-portfolio-gallery .ment-cell img{display:block;width:100%;height:auto;transition:opacity .25s ease,transform .25s ease}
+#ment-portfolio-gallery .ment-cell:hover img{opacity:.35;transform:scale(1.03)}
+#ment-portfolio-gallery .ment-caption{
+  position:absolute;left:0;right:0;bottom:0;padding:10px 12px;
+  color:#fff;font:12px/1.35 questrial,sans-serif;text-align:center;
+  opacity:0;transition:opacity .2s ease;pointer-events:none;
+}
+#ment-portfolio-gallery .ment-cell:hover .ment-caption{opacity:1}
+#ment-lightbox{
+  position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.92);
+  display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
+}
+#ment-lightbox.open{display:flex}
+#ment-lightbox img{max-width:100%;max-height:100%;box-shadow:0 10px 60px #000}
+#ment-lightbox .ment-close{position:absolute;top:12px;right:24px;color:#fff;font:30px/1 Arial,sans-serif;cursor:pointer}
