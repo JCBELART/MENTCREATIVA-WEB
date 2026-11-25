@@ -1,0 +1,85 @@
+MENT CREATIVA — SUBIR LA WEB GRATIS Y INDEXARLA
+================================================
+
+CARPETA A SUBIR
+---------------
+Esta carpeta entera ("MENTCREATIVA WEB"). Sube TODO SU CONTENIDO
+(los archivos y las carpetas es, ca, en, fr y assets), no la carpeta dentro de otra carpeta.
+
+Contiene: 40 paginas (4 idiomas x 10 paginas), 420 recursos locales,
+robots.txt y sitemap.xml con el dominio mentcreativa.store.
+
+
+PASO 1 — SUBIR A UN HOSTING GRATUITO (VERCEL)
+---------------------------------------------
+1. Crea una cuenta en GitHub (https://github.com) y crea un repositorio nuevo
+   (por ejemplo: mentcreativa-web), publico o privado.
+2. Sube a ese repositorio TODO el contenido de esta carpeta.
+   Puedes hacerlo con GitHub Desktop: "Add Local Repository" -> selecciona esta
+   carpeta -> "Publish repository". O con la web: "Add file -> Upload files" y
+   arrastras todos los archivos y carpetas.
+3. Entra en https://vercel.com y haz login con GitHub.
+4. "Add New..." -> "Project" -> Importa el repositorio mentcreativa-web.
+5. En la pantalla de configuracion deja:
+     Framework Preset: Other
+     Root Directory: ./ (la raiz)
+     Build Command: (vacio)
+     Output Directory: (vacio)
+6. Pulsa "Deploy". Espera 1-2 minutos. Te dara una URL tipo
+   https://mentcreativa-web-xxx.vercel.app -> abrela y comprueba que se ve igual.
+   La portada redirige a /es/index.html.
+
+
+PASO 2 — PONER EL DOMINIO mentcreativa.store (NOMINALIA)
+--------------------------------------------------------
+1. En Vercel: tu proyecto -> "Settings" -> "Domains" ->
+   "Add" -> escribe mentcreativa.store -> Add.
+   Repite con www.mentcreativa.store.
+2. Entra en https://controlpanel.nominalia.com
+3. "Dominios y Productos" -> clic en mentcreativa.store
+4. "DOMINIO Y DNS" -> "Gestionar DNS" -> "Editar Zona DNS" -> "Agregar"
+5. Crea estos DOS registros:
+
+     Tipo: A      Nombre/Host: @     Valor: 76.76.21.21
+     Tipo: CNAME  Nombre/Host: www   Valor: cname.vercel-dns.com
+
+   (Si Nominalia no acepta "@", deja el nombre vacio.)
+6. Guarda los cambios. Si pide codigo 2FA, correo o WhatsApp, confirmalo.
+7. Espera la propagacion DNS (unos minutos; puede tardar hasta 24-48 h).
+   En Vercel el dominio cambiara a "Valid Configuration" y el certificado
+   HTTPS (candado) se emite automaticamente.
+8. Comprueba: https://mentcreativa.store y https://www.mentcreativa.store
+
+
+PASO 3 — INDEXAR EN GOOGLE
+--------------------------
+1. Entra en https://search.google.com/search-console con tu cuenta de Google.
+2. "Add property" ->Elige "Domain" (Dominio) -> escribe mentcreativa.store -> Continue.
+3. Google te muestra un registro TXT con un valor largo. Copialo.
+4. Vuelve a Nominalia -> la zona DNS de mentcreativa.store -> "Agregar":
+     Tipo: TXT   Nombre/Host: @   Valor: (pega el valor de Google)
+   Guarda.
+5. Vuelve a Search Console y pulsa "Verify". Si falla, espera unos minutos
+   y vuelve a intentarlo (propagacion DNS).
+6. En el menu izquierdo -> "Sitemaps" -> escribe exactamente: sitemap.xml
+   -> "Submit". Debe aparecer como "Success".
+7. "URL Inspection" -> pega https://mentcreativa.store/es/index.html ->
+   "Request indexing". Haz lo mismo con las paginas principales.
+8. Comprueba que funciona: https://mentcreativa.store/robots.txt
+   y https://mentcreativa.store/sitemap.xml
+
+
+FORMULARIO DE CONTACTO
+---------------------
+El formulario envia a joancarlesdisseny@hotmail.com mediante FormSubmit.
+La PRIMERA vez que alguien lo envie, FormSubmit manda un correo a esa
+direccion para confirmarla. Hay que hacer clic en el enlace de confirmacion
+para que los mensajes empiecen a llegar.
+
+
+NOTAS
+-----
+- El banner publicitario de Wix y la franja blanca superior ya estan quitados.
+- Las imagenes, fuentes y estilos estan descargados dentro de assets/cdn/.
+- El JS de Wix todavia hace alguna peticion de telemetria a frog.wix.com;
+  no afecta a como se ve la web.
