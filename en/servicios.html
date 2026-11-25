@@ -321,7 +321,7 @@
 <style id="ment-mobile-seo">
 /* 1) Iconos sociales centrados respecto al recuadro de POLITICA DE PRIVACIDAD */
 /* 2) Adaptacion movil del clon (diseno Wix fijo a 980px) */
-html,body{max-width:100%;overflow-x:hidden;}
+html,body{max-width:100%;overflow-x:clip;}
 #masterPage,#SITE_HEADER_WRAPPER,#PAGES_CONTAINER,#SITE_FOOTER_WRAPPER{max-width:100%;}
 img,iframe,video,svg{max-width:100%;}
 textarea,input,select{font-size:16px;max-width:100%;}
@@ -352,8 +352,8 @@ textarea,input,select{font-size:16px;max-width:100%;}
 
 <style id="ment-overflow-fix">
 /* Evita que los elementos posicionados del clon Wix desborden horizontalmente */
-#SITE_HEADER,#SITE_FOOTER,#PAGES_CONTAINER,#masterPage,#SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{max-width:100%;overflow-x:hidden;}
-#comp-iohip3pr,#comp-ioe51y89{max-width:100%;overflow:hidden;}
+#SITE_HEADER,#SITE_FOOTER,#PAGES_CONTAINER,#masterPage,#SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{max-width:100%;overflow-x:clip;}
+#comp-iohip3pr,#comp-ioe51y89{max-width:100%;overflow:clip;}
 </style>
 
 <style id="ment-a11y-fix">
@@ -925,29 +925,56 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <!-- === FIN MENT CREATIVA === -->
 
 <script id="ment-scale-force">
+
 (function () {
   function fit() {
     var mp = document.getElementById('masterPage');
     if (!mp) return;
     var w = window.innerWidth || document.documentElement.clientWidth || 980;
-    if (w >= 1024) {
+    var root = mp.parentElement;
+
+    function limpiar() {
       mp.style.transform = '';
       mp.style.width = '';
-      return;
+      if (root) {
+        root.style.height = '';
+        root.style.minHeight = '';
+        root.style.maxHeight = '';
+        root.style.overflow = '';
+        root.style.overflowX = '';
+      }
+      document.documentElement.style.overflowY = '';
+      document.body.style.overflowY = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
     }
+
+    if (w >= 1024) { limpiar(); return; }
+
     var s = Math.min(1, w / 980);
     mp.style.width = '980px';
     mp.style.transform = 'scale(' + s + ')';
     mp.style.transformOrigin = 'top left';
-    var wrap = mp.parentElement;
-    if (wrap) {
-      wrap.style.overflowX = 'hidden';
-      wrap.style.minHeight = Math.round(mp.scrollHeight * s) + 'px';
+
+    // La franja gris (SITE_FOOTER) es lo ultimo del lienzo: recortar ahi el scroll.
+    var alto = Math.ceil(mp.scrollHeight * s);
+    if (root) {
+      root.style.height = alto + 'px';
+      root.style.minHeight = alto + 'px';
+      root.style.maxHeight = alto + 'px';
+      // clip NO crea contenedor de scroll (a diferencia de hidden).
+      root.style.overflow = 'clip';
+      root.style.position = 'relative';
     }
+    document.documentElement.style.overflowY = '';
+    document.body.style.overflowY = '';
+    document.body.style.height = '';
+    document.body.style.maxHeight = '';
   }
   fit();
-  window.addEventListener('resize', fit);
   window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  setTimeout(fit, 300);
 })();
 </script>
 
