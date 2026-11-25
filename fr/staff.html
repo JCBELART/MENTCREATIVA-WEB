@@ -575,24 +575,59 @@
 
 
 
-<!-- detect browser zoom -->
 
-
-
-
-
-
+<!-- === MENT CREATIVA: formulario con iframe oculto, limpieza y mensaje de gracias === -->
+<iframe name="mentFormTarget" id="mentFormTarget" title="Envío oculto" style="position:absolute;width:0;height:0;border:0;display:none;"></iframe>
+<div id="mentFormThanks" role="status" aria-live="polite" style="display:none;position:relative;z-index:99999;margin:18px auto;padding:16px 22px;max-width:520px;text-align:center;font-family:futura-lt-w01-light,sans-serif;font-size:20px;color:#05C8A1;background:rgba(255,255,255,.96);border:2px solid #05C8A1;box-shadow:0 4px 16px rgba(0,0,0,.25);">Merci d'avoir envoyé votre message !</div>
 <script>
-document.addEventListener('submit', function (e) {
-  var f = e.target;
-  if (!f || f.tagName !== 'FORM' || f.dataset.patched) return;
-  e.stopImmediatePropagation();
-  f.dataset.patched = '1';
-  f.action = 'https://formsubmit.co/joancarlesdisseny@hotmail.com';
-  f.method = 'POST';
-  [['_subject', 'Nuevo mensaje desde la web de MENT CREATIVA'], ['_captcha', 'false'], ['_template', 'basic']].forEach(function (p) {
-    var i = document.createElement('input'); i.type = 'hidden'; i.name = p[0]; i.value = p[1]; f.appendChild(i);
-  });
-}, true);
-</script></body>
+(function () {
+  var iframe = document.getElementById('mentFormTarget');
+  var thanks = document.getElementById('mentFormThanks');
+
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM' || f.dataset.mentPatched) return;
+    e.stopImmediatePropagation();
+    f.dataset.mentPatched = '1';
+
+    // Enviar a FormSubmit dentro del iframe oculto (no abandona la web).
+    f.action = 'https://formsubmit.co/joancarlesdisseny@hotmail.com';
+    f.method = 'POST';
+    f.target = 'mentFormTarget';
+    f.setAttribute('target', 'mentFormTarget');
+
+    [['_subject', 'Nuevo mensaje desde la web de MENT CREATIVA'],
+     ['_captcha', 'false'],
+     ['_template', 'basic'],
+     ['_next', window.location.pathname + window.location.hash + '#enviado']].forEach(function (p) {
+      var i = document.createElement('input');
+      i.type = 'hidden';
+      i.name = p[0];
+      i.value = p[1];
+      f.appendChild(i);
+    });
+
+    // Mostrar gracias y limpiar los campos en cuanto responde el iframe.
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      f.reset();
+      Array.prototype.forEach.call(f.querySelectorAll('input:not([type=hidden]), textarea'), function (el) {
+        el.value = '';
+      });
+      if (thanks) {
+        thanks.style.display = 'block';
+        thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function () { thanks.style.display = 'none'; }, 8000);
+      }
+      try { iframe.onload = null; } catch (err) {}
+    }
+    iframe.onload = finish;
+    setTimeout(finish, 4000);
+  }, true);
+})();
+</script>
+<!-- === FIN MENT CREATIVA === -->
+</body>
 </html>
