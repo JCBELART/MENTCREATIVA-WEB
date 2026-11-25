@@ -1,0 +1,13 @@
+{
+  "name": "MENT CREATIVA · Agencia de publicidad en Barcelona",
+  "short_name": "MENT CREATIVA",
+  "description": "Agencia de publicidad, diseño y creatividad en Barcelona.",
+  "start_url": "/es/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
