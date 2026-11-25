@@ -787,5 +787,41 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   toggle();
 })();
 </script>
+
+<script id="ment-staff-bg-movil">
+(function () {
+  function recortar() {
+    var w = window.innerWidth || document.documentElement.clientWidth || 980;
+    var foot = document.getElementById('SITE_FOOTER');
+    if (!foot) return;
+    if (w >= 1024) {
+      var pb0 = document.querySelector('[id^="pageBackground_"]');
+      if (pb0) {
+        ['top','height','min-height','width'].forEach(function (p) { pb0.style.removeProperty(p); });
+        var bl0 = pb0.querySelector('[id^="bgLayers_"]');
+        if (bl0) ['height','min-height','width'].forEach(function (p) { bl0.style.removeProperty(p); });
+      }
+      return;
+    }
+    var alto = Math.ceil(foot.getBoundingClientRect().bottom);
+    var pb = document.querySelector('[id^="pageBackground_"]');
+    if (!pb) return;
+    pb.style.setProperty('top', '0px', 'important');
+    pb.style.setProperty('height', alto + 'px', 'important');
+    pb.style.setProperty('min-height', alto + 'px', 'important');
+    pb.style.setProperty('width', '100%', 'important');
+    var bl = pb.querySelector('[id^="bgLayers_"]');
+    if (bl) {
+      bl.style.setProperty('height', '100%', 'important');
+      bl.style.setProperty('min-height', '0', 'important');
+      bl.style.setProperty('width', '100%', 'important');
+    }
+  }
+  recortar();
+  window.addEventListener('load', recortar);
+  window.addEventListener('resize', recortar);
+  setTimeout(recortar, 350);
+})();
+</script>
 </body>
 </html>

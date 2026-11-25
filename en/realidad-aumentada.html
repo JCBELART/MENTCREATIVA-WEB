@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Wix.com Website Builder"/>
   <meta name="format-detection" content="telephone=no">
@@ -316,6 +316,38 @@
 #mentBackToTop svg{width:22px;height:22px;display:block;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
 #mentBackToTop:hover,#mentBackToTop:focus-visible{background:#ec9712;color:#000;outline:none;}
 @media (max-width:760px){#mentBackToTop{right:12px;bottom:12px;width:44px;height:44px;}}
+</style>
+<style id="ment-mobile-seo">
+/* 1) Iconos sociales centrados respecto al recuadro de POLITICA DE PRIVACIDAD */
+/* 2) Adaptacion movil del clon (diseno Wix fijo a 980px) */
+html,body{max-width:100%;overflow-x:clip;}
+#masterPage,#SITE_HEADER_WRAPPER,#PAGES_CONTAINER,#SITE_FOOTER_WRAPPER{max-width:100%;}
+img,iframe,video,svg{max-width:100%;}
+textarea,input,select{font-size:16px;max-width:100%;}
+#mentFormThanks{max-width:calc(100vw - 32px)!important;font-size:18px!important;}
+@media (max-width: 1024px){
+  #masterPage,#mediaiyorlu347,#SITE_HEADER,#SITE_FOOTER{transform-origin:top center;}
+}
+@media (max-width: 760px){
+  /* Escala proporcional de todo el lienzo Wix de 980px al ancho real del movil */
+  #masterPage{width:980px!important;transform:scale(var(--ment-scale, .36));transform-origin:top left;}
+  #SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{min-width:980px;}
+  body{background:#000;}
+  /* El menu y el selector de idiomas deben seguir siendo usables */
+  #comp-kes6vqh2 .tN_ggS{gap:6px;}
+}
+@media (max-width: 480px){
+  #masterPage{transform:scale(var(--ment-scale, .33));}
+}
+/* Texto y campos legibles en movil */
+@media (max-width: 760px){
+  .ment-contacto-anchor input,.ment-contacto-anchor textarea{font-size:16px!important;}
+}
+</style>
+<style id="ment-overflow-fix">
+/* Evita que los elementos posicionados del clon Wix desborden horizontalmente */
+#SITE_HEADER,#SITE_FOOTER,#PAGES_CONTAINER,#masterPage,#SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{max-width:100%;overflow-x:clip;}
+#comp-iohip3pr,#comp-ioe51y89{max-width:100%;overflow:clip;}
 </style>
 </head>
 <body class='' >
@@ -648,6 +680,59 @@ document.addEventListener('submit', function (e) {
   window.addEventListener('resize', toggle);
   setTimeout(toggle, 300);
   toggle();
+})();
+</script>
+<script id="ment-scale-force">
+
+(function () {
+  function fit() {
+    var mp = document.getElementById('masterPage');
+    if (!mp) return;
+    var w = window.innerWidth || document.documentElement.clientWidth || 980;
+    var root = mp.parentElement;
+
+    function limpiar() {
+      mp.style.transform = '';
+      mp.style.width = '';
+      if (root) {
+        root.style.height = '';
+        root.style.minHeight = '';
+        root.style.maxHeight = '';
+        root.style.overflow = '';
+        root.style.overflowX = '';
+      }
+      document.documentElement.style.overflowY = '';
+      document.body.style.overflowY = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
+    }
+
+    if (w >= 1024) { limpiar(); return; }
+
+    var s = Math.min(1, w / 980);
+    mp.style.width = '980px';
+    mp.style.transform = 'scale(' + s + ')';
+    mp.style.transformOrigin = 'top left';
+
+    // La franja gris (SITE_FOOTER) es lo ultimo del lienzo: recortar ahi el scroll.
+    var alto = Math.ceil(mp.scrollHeight * s);
+    if (root) {
+      root.style.height = alto + 'px';
+      root.style.minHeight = alto + 'px';
+      root.style.maxHeight = alto + 'px';
+      // clip NO crea contenedor de scroll (a diferencia de hidden).
+      root.style.overflow = 'clip';
+      root.style.position = 'relative';
+    }
+    document.documentElement.style.overflowY = '';
+    document.body.style.overflowY = '';
+    document.body.style.height = '';
+    document.body.style.maxHeight = '';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  setTimeout(fit, 300);
 })();
 </script>
 </body>
