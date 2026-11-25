@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta charset='utf-8'>
-  <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Wix.com Website Builder"/>
   <meta name="format-detection" content="telephone=no">
@@ -141,7 +142,7 @@
 <style data-href="/assets/cdn/3f8f99aa29-group_7.c472a333.chunk.min.css">.QrIus{height:auto!important}.bsFmQ{overflow:hidden!important}
 /*# sourceMappingURL=/assets/cdn/3f8f99aa29-group_7.c472a333.chunk.min.css.map*/</style>
 <title>NEWS | MENTCREATIVA.COM</title>
-  <meta name="description" content="Conoce nuestras notícias para estar informado de nuestra trayectória profesional."/>
+  <meta name="description" content="MENT CREATIVA — Diseño creativo, branding, multimedia y experiencias digitales en Barcelona."/>
   <link rel="canonical" href="https://mentcreativa.store/es/news.html"/>
   <link rel="alternate" hreflang="es" href="https://mentcreativa.store/es/news.html"/>
   <link rel="alternate" hreflang="ca" href="https://mentcreativa.store/ca/news.html"/>
@@ -323,7 +324,63 @@
 #comp-keiraem8 .z6NAhm img{width:20px;height:20px;display:block}
 #comp-keiraem8 ._L5t7V{margin:0 4px;white-space:nowrap}
 #contacto{scroll-margin-top:130px}
-</style></head>
+</style>
+<!-- === MENT CREATIVA: adaptacion movil + SEO === -->
+<style id="ment-mobile-seo">
+/* 1) Iconos sociales centrados respecto al recuadro de POLITICA DE PRIVACIDAD */
+#comp-kes6vqh2{width:348px!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;}
+#comp-kes6vqh2 .tN_ggS{display:flex!important;justify-content:center!important;align-items:center!important;position:relative!important;white-space:nowrap!important;}
+#comp-kes6vqh2 .re13Ik{display:inline-flex!important;margin-inline:14px!important;}
+#comp-ketn7rql{margin-left:auto!important;margin-right:auto!important;}
+
+/* 2) Adaptacion movil del clon (diseno Wix fijo a 980px) */
+html,body{max-width:100%;overflow-x:hidden;}
+#masterPage,#SITE_HEADER_WRAPPER,#PAGES_CONTAINER,#SITE_FOOTER_WRAPPER{max-width:100%;}
+img,iframe,video,svg{max-width:100%;}
+textarea,input,select{font-size:16px;max-width:100%;}
+#mentFormThanks{max-width:calc(100vw - 32px)!important;font-size:18px!important;}
+@media (max-width: 1024px){
+  #masterPage,#mediaiyorlu347,#SITE_HEADER,#SITE_FOOTER{transform-origin:top center;}
+}
+@media (max-width: 760px){
+  /* Escala proporcional de todo el lienzo Wix de 980px al ancho real del movil */
+  #masterPage{width:980px!important;transform:scale(var(--ment-scale, .36));transform-origin:top left;}
+  #SITE_HEADER_WRAPPER,#SITE_FOOTER_WRAPPER{min-width:980px;}
+  body{background:#000;}
+  #comp-kes6vqh2{width:348px!important;}
+  /* El menu y el selector de idiomas deben seguir siendo usables */
+  #comp-kes6vqh2 .tN_ggS{gap:6px;}
+}
+@media (max-width: 480px){
+  #masterPage{transform:scale(var(--ment-scale, .33));}
+}
+/* Texto y campos legibles en movil */
+@media (max-width: 760px){
+  .ment-contacto-anchor input,.ment-contacto-anchor textarea{font-size:16px!important;}
+}
+</style>
+<script id="ment-scale-script">
+(function () {
+  function scale() {
+    var mp = document.getElementById('masterPage');
+    if (!mp) return;
+    var w = window.innerWidth || document.documentElement.clientWidth;
+    if (w >= 1024) { mp.style.transform = ''; mp.style.width = ''; return; }
+    var s = Math.min(1, w / 980);
+    mp.style.setProperty('--ment-scale', s);
+    // El contenedor debe ocupar la altura escalada para no dejar hueco.
+    var h = mp.scrollHeight * s;
+    var wrap = mp.parentElement;
+    if (wrap) wrap.style.minHeight = h + 'px';
+  }
+  scale();
+  window.addEventListener('resize', scale);
+  window.addEventListener('load', scale);
+})();
+</script>
+  <meta name="theme-color" content="#000000"/>
+  <meta property="og:locale" content="es_ES"/>
+</head>
 <body class='' >
 
 
