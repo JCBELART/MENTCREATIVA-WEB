@@ -721,6 +721,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     var priv = document.getElementById('comp-ketn7rql');
     var soc = document.getElementById('comp-kes6vqh2');
     if (!priv || !soc) return;
+    // Cancelar cualquier desplazamiento previo antes de medir.
+    soc.style.transform = '';
     var pb = priv.getBoundingClientRect();
     var target = pb.left + pb.width / 2;
     var imgs = soc.querySelectorAll('img');
