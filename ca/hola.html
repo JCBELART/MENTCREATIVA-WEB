@@ -334,6 +334,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 /* Los SVG decorativos se marcan con aria-hidden en el HTML (ver abajo). */
 </style>
 
+
+<style id="ment-priv-ajuste">
+/* El enlace/texo de POLITICA DE PRIVACIDAD ocupa todo el recuadro blanco */
+#comp-ketn7rql a.es7p0F{width:100%!important;min-width:100%!important;display:flex!important;align-items:center!important;justify-content:center!important;}
+#comp-ketn7rql .DZXEL1{white-space:nowrap!important;text-align:center!important;width:100%!important;}
+/* Los 2 logos se centran dentro del recuadro blanco, manteniendo su altura */
+#comp-kes6vqh2{width:324px!important;max-width:100%!important;position:relative!important;}
+#comp-kes6vqh2 .tN_ggS{display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;white-space:nowrap!important;}
+#comp-kes6vqh2 .re13Ik{display:inline-flex!important;margin-inline:14px!important;}
+</style>
 </head>
 <body class='' >
 
@@ -665,5 +675,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 })();
 </script>
 
+
+<script id="ment-priv-ajuste-js">
+(function () {
+  function align() {
+    var priv = document.getElementById('comp-ketn7rql');
+    var soc = document.getElementById('comp-kes6vqh2');
+    if (!priv || !soc) return;
+    var pb = priv.getBoundingClientRect();
+    var sb = soc.getBoundingClientRect();
+    var dx = Math.round((pb.left + pb.width / 2) - (sb.left + sb.width / 2));
+    // Solo eje horizontal; la altura (top/Y) no se modifica.
+    soc.style.transform = 'translateX(' + dx + 'px)';
+  }
+  align();
+  window.addEventListener('load', align);
+  window.addEventListener('resize', align);
+})();
+</script>
 </body>
 </html>
