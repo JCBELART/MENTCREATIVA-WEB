@@ -41,8 +41,11 @@ PASO 2 — PONER EL DOMINIO mentcreativa.store (NOMINALIA)
 5. Crea estos DOS registros:
 
      Tipo: A      Nombre/Host: @     Valor: 216.198.79.1
-     Tipo: CNAME  Nombre/Host: www   Valor: (copia exactamente el que muestra Vercel,
-               normalmente cname.vercel-dns.com o uno tipo xxxx.vercel-dns-017.com)
+
+   Eso es todo lo que Vercel pide para que funcione mentcreativa.store.
+   Opcional: si ademas anadiste www.mentcreativa.store en Vercel (Settings > Domains),
+   anade tambien un CNAME: Nombre/Host www, Valor cname.vercel-dns.com
+   (o el valor exacto que muestre Vercel para ese dominio www).
 
    (Si Nominalia no acepta "@", deja el nombre vacio.)
 6. Guarda los cambios. Si pide codigo 2FA, correo o WhatsApp, confirmalo.
