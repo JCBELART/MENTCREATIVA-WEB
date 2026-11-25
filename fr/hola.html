@@ -683,9 +683,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     var soc = document.getElementById('comp-kes6vqh2');
     if (!priv || !soc) return;
     var pb = priv.getBoundingClientRect();
-    var sb = soc.getBoundingClientRect();
-    var dx = Math.round((pb.left + pb.width / 2) - (sb.left + sb.width / 2));
-    // Solo eje horizontal; la altura (top/Y) no se modifica.
+    var target = pb.left + pb.width / 2;
+    var imgs = soc.querySelectorAll('img');
+    var current;
+    if (imgs.length >= 2) {
+      var a = imgs[0].getBoundingClientRect();
+      var b = imgs[1].getBoundingClientRect();
+      current = (a.left + b.right) / 2;
+    } else {
+      var sb = soc.getBoundingClientRect();
+      current = sb.left + sb.width / 2;
+    }
+    var dx = Math.round(target - current);
     soc.style.transform = 'translateX(' + dx + 'px)';
   }
   align();
