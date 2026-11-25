@@ -7,12 +7,13 @@ echo ============================================================
 echo.
 echo Antes de ejecutar esto debes haber creado el repositorio en:
 echo   https://github.com/new
-echo Nombre sugerido: mentcreativa-web
+echo Nombre: MENTCREATIVA-WEB (ya creado)
 echo Importante: NO marques "Add a README file", ni .gitignore, ni license.
 echo.
-set /p USU="Escribe tu usuario de GitHub: "
-set /p REPO="Nombre del repositorio [mentcreativa-web]: "
-if "%REPO%"=="" set REPO=mentcreativa-web
+set /p USU="Tu usuario de GitHub [JCBELART]: "
+if "%USU%"=="" set USU=JCBELART
+set /p REPO="Nombre del repositorio [MENTCREATIVA-WEB]: "
+if "%REPO%"=="" set REPO=MENTCREATIVA-WEB
 echo.
 echo Preparando la carpeta: "%cd%"
 git init
