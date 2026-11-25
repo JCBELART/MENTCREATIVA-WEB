@@ -308,7 +308,15 @@
 #comp-keiraem8 .z6NAhm img{width:20px;height:20px;display:block}
 #comp-keiraem8 ._L5t7V{margin:0 4px;white-space:nowrap}
 #contacto{scroll-margin-top:130px}
-</style></head>
+</style>
+<style id="ment-back-to-top">
+#mentBackToTop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(10,10,10,.85);border:2px solid #ec9712;color:#ec9712;cursor:pointer;z-index:2147483000;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s;box-shadow:0 4px 14px rgba(0,0,0,.45);padding:0;-webkit-tap-highlight-color:transparent;}
+#mentBackToTop.ment-visible{opacity:1;visibility:visible;transform:translateY(0);}
+#mentBackToTop svg{width:22px;height:22px;display:block;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+#mentBackToTop:hover,#mentBackToTop:focus-visible{background:#ec9712;color:#000;outline:none;}
+@media (max-width:760px){#mentBackToTop{right:12px;bottom:12px;width:44px;height:44px;}}
+</style>
+</head>
 <body class='' >
 
 
@@ -605,5 +613,38 @@ document.addEventListener('submit', function (e) {
     var i = document.createElement('input'); i.type = 'hidden'; i.name = p[0]; i.value = p[1]; f.appendChild(i);
   });
 }, true);
-</script></body>
+</script><button type="button" id="mentBackToTop" aria-label="Volver arriba" title="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script id="ment-back-to-top-js">
+(function () {
+  var btn = document.getElementById('mentBackToTop');
+  if (!btn) return;
+  function pos() {
+    return Math.max(
+      (document.body && document.body.scrollTop) || 0,
+      (document.documentElement && document.documentElement.scrollTop) || 0,
+      window.pageYOffset || 0
+    );
+  }
+  function toggle() {
+    if (pos() > 260) btn.classList.add('ment-visible');
+    else btn.classList.remove('ment-visible');
+  }
+  function up() {
+    if (document.body) document.body.scrollTop = 0;
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    window.scrollTo(0, 0);
+    toggle();
+  }
+  btn.addEventListener('click', up);
+  window.addEventListener('scroll', toggle, {passive:true});
+  document.addEventListener('scroll', toggle, {passive:true});
+  if (document.body) document.body.addEventListener('scroll', toggle, {passive:true});
+  window.addEventListener('load', toggle);
+  window.addEventListener('resize', toggle);
+  setTimeout(toggle, 300);
+  toggle();
+})();
+</script>
+</body>
 </html>
