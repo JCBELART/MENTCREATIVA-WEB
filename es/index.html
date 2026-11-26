@@ -505,17 +505,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 </style>
   <link id="ment-lcp-preload" rel="preload" as="image" href="https://static.wixstatic.com/media/32797a_ce16dccfaa1a4da39d3d2ef3e62aa2ef~mv1.jpg/v1/fill/w_1326,h_1080,al_c,q_85,enc_avif,quality_auto/32797a_ce16dccfaa1a4da39d3d2ef3e62aa2ef~mv1.jpg" fetchpriority="high"/>
 <style id="ment-targets">
-/* idiomas: caja 30 -> 62px CSS, margen simetrico compensado */
+/* Idiomas: caja 30 -> 62px CSS con margen compensado */
 #comp-keiraem8 a.wixui-language-menu__option{height:62px!important;margin-top:-16px!important;margin-bottom:-16px!important}
-/* mailto: crece 10px CSS hacia arriba */
-#comp-k9nwk74u a.IT88M3{padding-top:10px!important;margin-top:-10px!important}
-/* enlace agradecimiento: crece 40px CSS hacia abajo */
+/* Mailto y agradecimiento: crece hacia arriba/abajo con margen compensado */
+#comp-k9nwk74u a.IT88M3{padding-top:40px!important;margin-top:-40px!important}
 a.wixui-rich-text__text[href^="mailto:"]{display:inline-block!important;padding-bottom:40px!important;margin-bottom:-40px!important}
-/* fila 1 inputs: crece 10px CSS hacia abajo */
-#input_comp-k9nwgn7b,#input_comp-k9nwgn7w{height:48px!important;margin-bottom:-10px!important}
-/* fila 2 inputs: crece 26px CSS hacia abajo */
-#input_comp-k9nwgn8i,#input_comp-k9nwgn93{height:64px!important;margin-bottom:-26px!important}
-/* boton Enviar: 40x36 -> 62x62 CSS, margen simetrico compensado */
+/* Inputs: crece el CONTENEDOR (no el input, que Wix recorta) hacia abajo */
+#comp-k9nwgn7b,#comp-k9nwgn7w,#comp-k9nwgn8i,#comp-k9nwgn93,#comp-k9nwgn9s{height:62px!important;margin-bottom:-24px!important}
+#comp-k9nwgn7b input,#comp-k9nwgn7w input,#comp-k9nwgn8i input,#comp-k9nwgn93 input,#comp-k9nwgn9s input{height:62px!important;margin-bottom:-24px!important}
+/* Boton Enviar: 40x36 -> 62x62 CSS sin desplazar */
 button.twJknM{width:62px!important;height:62px!important;margin-top:-13px!important;margin-bottom:-13px!important;margin-left:-11px!important;margin-right:-11px!important}
 </style>
 </head>
