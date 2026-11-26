@@ -42,6 +42,18 @@ document.addEventListener('click',function(e){
   }
 },true);
 </script>
+<script id="ment-home-links-fix">
+document.addEventListener('click',function(e){
+  if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var t=e.target;
+  var a=t&&t.closest?t.closest('a.wixui-button[href$="hola.html"],a.wixui-button[href$="staff.html"],a.wixui-button[href$="servicios.html"]'):null;
+  if(a){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.location.href=a.href;
+  }
+},true);
+</script>
 
 <script id="ment-worker-local">
 (function(){
@@ -564,7 +576,7 @@ a.wixui-rich-text__text[href^="mailto:"]{display:inline-block!important;padding-
 /* Agrandar el .nuFEsg (padded box) y el input: 38 -> 62px CSS sin mover el texto */
 #comp-k9nwgn7b .nuFEsg,#comp-k9nwgn7w .nuFEsg,#comp-k9nwgn8i .nuFEsg,#comp-k9nwgn93 .nuFEsg,#comp-k9nwgn9s .nuFEsg{height:62px!important;padding-top:24px!important;margin-bottom:-24px!important}
 #comp-k9nwgn7b input,#comp-k9nwgn7w input,#comp-k9nwgn8i input,#comp-k9nwgn93 input,#comp-k9nwgn9s input{height:62px!important;padding-top:21px!important;padding-bottom:21px!important;margin-top:-21px!important}
-button.twJknM{width:62px!important;height:62px!important;margin-top:-13px!important;margin-bottom:-13px!important;margin-left:-11px!important;margin-right:-11px!important}
+button.twJknM{width:160px!important;height:62px!important;box-sizing:border-box!important;padding:0 14px!important;border-radius:4px!important;white-space:nowrap!important;margin-top:-13px!important;margin-bottom:-13px!important;margin-left:-30px!important;margin-right:-30px!important}
 .color_12{color:#222!important}
 #comp-lilkc39y3label{color:#ffd27f!important}
 .font_8{color:#6a6a6a!important}
