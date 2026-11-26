@@ -880,7 +880,7 @@ button.twJknM{width:160px!important;height:62px!important;box-sizing:border-box!
 
   document.addEventListener('submit', function (e) {
     var f = e.target;
-    if (!f || f.tagName !== 'FORM' || f.dataset.mentPatched) return;
+    if (!f || f.tagName !== 'FORM' || f.dataset.mentPatched || f.id === 'ment-chat-form') return;
     e.stopImmediatePropagation();
     f.dataset.mentPatched = '1';
 
@@ -1060,6 +1060,6 @@ button.twJknM{width:160px!important;height:62px!important;box-sizing:border-box!
 </script>
 <style id="ment-chat-css-min">#comp-kettnbtr,iframe[title="Wix Chat"]{display:none!important;visibility:hidden!important;pointer-events:none!important}.ment-chat-btn{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#007a68;color:#fff;border:0;box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2147483000}.ment-chat-btn svg{width:28px;height:28px;fill:#fff}@media(max-width:480px){.ment-chat-btn{right:12px;bottom:12px}}</style>
 <button type="button" id="ment-chat-open" class="ment-chat-btn" aria-label="Abrir chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.7 1.2 5.2 3.2 6.9L4 22l4.1-2.1c1.2.4 2.6.6 3.9.6 5.5 0 10-4.1 10-9.3S17.5 2 12 2z"/></svg></button>
-<script>(function(){var b=document.getElementById('ment-chat-open');b.addEventListener('click',function(){window.__mentChatPendingOpen=1;if(window.__mentChatOn)return;window.__mentChatOn=1;var s=document.createElement('script');s.src='/assets/ment-chat.js';document.head.appendChild(s)},{once:true})})();</script>
+<script>(function(){var b=document.getElementById('ment-chat-open');b.addEventListener('click',function(){window.__mentChatPendingOpen=1;if(window.__mentChatOn)return;window.__mentChatOn=1;var s=document.createElement('script');s.src='/assets/ment-chat.js?v=d974a98';document.head.appendChild(s)},{once:true})})();</script>
 </body>
 </html>
