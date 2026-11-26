@@ -38,6 +38,17 @@
       })(as[i]);
     }
   }
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    var a=t&&t.closest?t.closest('#ment-portfolio-gallery a.ment-cell'):null;
+    if(!a) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    ensureLightbox();
+    img.src=a.getAttribute('href');
+    img.alt=a.getAttribute('title')||'';
+    box.classList.add('open');
+  },true);
   function restore(){
     if(!saved||restores>6) return;
     var w=document.getElementById('comp-iohcdgax');
