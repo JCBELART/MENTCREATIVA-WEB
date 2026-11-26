@@ -2,6 +2,17 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+<script id="ment-console-silencioso">
+(function(){
+  var pat = /Failed to construct 'Worker'|did not find the pageId|platformWorkerPromise|Failed to read the 'sessionStorage'/;
+  function conocido(m){ return pat.test(String(m||'')); }
+  window.addEventListener('error', function(e){ if (conocido(e.message)) e.preventDefault(); }, true);
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e.reason;
+    if (conocido(r && r.message || r)) e.preventDefault();
+  }, true);
+})();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta charset='utf-8'>
   
