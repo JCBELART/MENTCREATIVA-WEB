@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.mentcreativa.store" }],
+      "destination": "https://mentcreativa.store/es/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.mentcreativa.store" }],
+      "destination": "https://mentcreativa.store/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "/es/index.html",
+      "permanent": true
+    }
+  ]
+}
