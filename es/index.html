@@ -505,16 +505,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 </style>
   <link id="ment-lcp-preload" rel="preload" as="image" href="https://static.wixstatic.com/media/32797a_ce16dccfaa1a4da39d3d2ef3e62aa2ef~mv1.jpg/v1/fill/w_1326,h_1080,al_c,q_85,enc_avif,quality_auto/32797a_ce16dccfaa1a4da39d3d2ef3e62aa2ef~mv1.jpg" fetchpriority="high"/>
 <style id="ment-targets">
-/* idiomas: 30 -> 62px CSS, margen compensado */
-#comp-keiraem8 a.wixui-language-menu__option{padding-top:16px!important;padding-bottom:16px!important;margin-top:-16px!important;margin-bottom:-16px!important}
-/* enlace mailto del formulario: 42 -> 62px */
-#comp-k9nwk74u a.IT88M3{display:inline-block!important;padding-top:10px!important;padding-bottom:10px!important;margin-top:-10px!important;margin-bottom:-10px!important}
-/* enlace de agradecimiento (mailto inline): 19 -> 61px */
-a.wixui-rich-text__text[href^="mailto:"]{display:inline-block!important;padding-top:21px!important;padding-bottom:21px!important;margin-top:-21px!important;margin-bottom:-21px!important}
-/* inputs: border-box 38 -> 62px */
-input[id^="input_comp-k9nw"]{height:62px!important;margin-top:-12px!important;margin-bottom:-12px!important}
-/* boton Enviar: 40x36 -> 62x62 */
-button.twJknM{min-width:62px!important;min-height:62px!important;margin-top:-13px!important;margin-bottom:-13px!important;margin-left:-11px!important;margin-right:-11px!important}
+/* idiomas: caja 30 -> 62px CSS, margen simetrico compensado */
+#comp-keiraem8 a.wixui-language-menu__option{height:62px!important;margin-top:-16px!important;margin-bottom:-16px!important}
+/* mailto: crece 10px CSS hacia arriba */
+#comp-k9nwk74u a.IT88M3{padding-top:10px!important;margin-top:-10px!important}
+/* enlace agradecimiento: crece 40px CSS hacia abajo */
+a.wixui-rich-text__text[href^="mailto:"]{display:inline-block!important;padding-bottom:40px!important;margin-bottom:-40px!important}
+/* fila 1 inputs: crece 10px CSS hacia abajo */
+#input_comp-k9nwgn7b,#input_comp-k9nwgn7w{height:48px!important;margin-bottom:-10px!important}
+/* fila 2 inputs: crece 26px CSS hacia abajo */
+#input_comp-k9nwgn8i,#input_comp-k9nwgn93{height:64px!important;margin-bottom:-26px!important}
+/* boton Enviar: 40x36 -> 62x62 CSS, margen simetrico compensado */
+button.twJknM{width:62px!important;height:62px!important;margin-top:-13px!important;margin-bottom:-13px!important;margin-left:-11px!important;margin-right:-11px!important}
 </style>
 </head>
 <body class='' >
