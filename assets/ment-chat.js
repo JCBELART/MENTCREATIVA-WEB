@@ -8,7 +8,7 @@
     es: {
       open: 'Abrir chat', title: 'Chat MENT CREATIVA', close: 'Cerrar',
       placeholder: 'Escribe tu mensaje...', send: 'Enviar',
-      quick: [['Servicios', 'servicios'], ['Portfolio', 'portfolio'], ['Presupuesto', 'presupuesto'], ['Contacto', 'contacto']],
+      quick: [['Servicios', 'servicios'], ['Portfolio', 'portfolio'], ['Presupuesto', 'presupuesto'], ['Teléfono', 'telefono'], ['Contacto', 'contacto']],
       greeting: '¡Hola! Soy el asistente de MENT CREATIVA. Puedo ayudarte con servicios, portfolio, presupuesto o contacto. ¿Qué necesitas?',
       fallback: 'Puedo ayudarte con <strong>servicios</strong>, <strong>portfolio</strong>, <strong>presupuesto</strong> o <strong>contacto</strong>. Elige una opción o escribe tu pregunta.',
       intents: [
@@ -17,11 +17,13 @@
         [['portfolio', 'trabajos', 'proyectos', 'proyecto', 'ejemplos'],
           'Puedes ver algunos de nuestros trabajos en el <a href="./portfolio.html">portfolio</a>.'],
         [['presupuesto', 'precio', 'cuanto cuesta', 'cotizacion', 'tarifa', 'cuanto', 'coste'],
-          'Para un presupuesto necesitamos saber qué necesitas. Rellena el <a href="./hola.html">formulario de contacto</a> o escríbenos a <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
+          'Para un presupuesto necesitamos saber qué necesitas. Llámanos al <a href="tel:+34640543626">+34 640 543 626</a>, rellena el <a href="./hola.html">formulario de contacto</a> o escríbenos a <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
         [['equipo', 'staff', 'quienes sois', 'personas', 'agencia'],
           'Conoce al equipo en la página de <a href="./staff.html">staff</a>.'],
-        [['contacto', 'contactar', 'email', 'correo', 'telefono', 'llamar', 'hablar'],
-          'Escríbenos a <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a> o usa el <a href="./hola.html">formulario</a>.'],
+        [['telefono', 'numero de telefono', 'atencion al cliente', 'servicio de atencion al cliente', 'customer service', 'llamar', 'llamada', 'hablar por telefono', 'contacto telefonico'],
+          'Puedes llamarnos al <a href="tel:+34640543626">+34 640 543 626</a>. Es nuestro teléfono de atención al cliente.'],
+        [['contacto', 'contactar', 'email', 'correo', 'mensaje', 'escribir'],
+          'Puedes llamarnos al <a href="tel:+34640543626">+34 640 543 626</a>, escribirnos a <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a> o usar el <a href="./hola.html">formulario</a>.'],
         [['privacidad', 'aviso legal', 'legal', 'politica', 'datos'],
           'Nuestra política está en el <a href="./aviso-legal.html">aviso legal</a>.'],
         [['wines', 'vino', 'vinos'],
@@ -41,7 +43,7 @@
     ca: {
       open: 'Obrir xat', title: 'Chat MENT CREATIVA', close: 'Tancar',
       placeholder: 'Escriu el teu missatge...', send: 'Enviar',
-      quick: [['Serveis', 'servicios'], ['Portfoli', 'portfolio'], ['Pressupost', 'presupuesto'], ['Contacte', 'contacto']],
+      quick: [['Serveis', 'servicios'], ['Portfoli', 'portfolio'], ['Pressupost', 'presupuesto'], ['Telèfon', 'telefono'], ['Contacte', 'contacto']],
       greeting: 'Hola! Sóc l’assistent de MENT CREATIVA. Puc ajudar-te amb serveis, portfoli, pressupost o contacte. Què necessites?',
       fallback: 'Puc ajudar-te amb <strong>serveis</strong>, <strong>portfoli</strong>, <strong>pressupost</strong> o <strong>contacte</strong>. Tria una opció o escriu la teva pregunta.',
       intents: [
@@ -50,11 +52,13 @@
         [['portfoli', 'treballs', 'projectes', 'projecte', 'exemples'],
           'Pots veure alguns dels nostres treballs al <a href="./portfolio.html">portfoli</a>.'],
         [['pressupost', 'preu', 'quant costa', 'tarifa', 'quant', 'costic'],
-          'Per a un pressupost necessitem saber què necessites. Omple el <a href="./hola.html">formulari de contacte</a> o escriu-nos a <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
+          'Per a un pressupost necessitem saber què necessites. Tria-nos al <a href="tel:+34640543626">+34 640 543 626</a>, omple el <a href="./hola.html">formulari de contacte</a> o escriu-nos a <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
         [['equip', 'staff', 'qui sou', 'persones', 'agencia'],
           'Coneix l’equip a la pàgina de <a href="./staff.html">staff</a>.'],
-        [['contacte', 'contactar', 'correu', 'email', 'telefon', 'trucar', 'parlar'],
-          'Escriu-nos a <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a> o fes servir el <a href="./hola.html">formulari</a>.'],
+        [['telefon', 'numero de telefon', 'atencio al client', 'servei datencio al client', 'customer service', 'trucar', 'trucada', 'parlar per telefon', 'contacte telefonic'],
+          'Pots trucar-nos al <a href="tel:+34640543626">+34 640 543 626</a>. És el nostre telèfon d’atenció al client.'],
+        [['contacte', 'contactar', 'correu', 'email', 'missatge', 'escriure'],
+          'Pots trucar-nos al <a href="tel:+34640543626">+34 640 543 626</a>, escriure-nos a <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a> o fer servir el <a href="./hola.html">formulari</a>.'],
         [['privacitat', 'avis legal', 'legal', 'politica', 'dades'],
           'La nostra política és a l’<a href="./aviso-legal.html">avis legal</a>.'],
         [['wines', 'vi', 'vins'],
@@ -74,7 +78,7 @@
     en: {
       open: 'Open chat', title: 'Chat MENT CREATIVA', close: 'Close',
       placeholder: 'Type your message...', send: 'Send',
-      quick: [['Services', 'servicios'], ['Portfolio', 'portfolio'], ['Quote', 'presupuesto'], ['Contact', 'contacto']],
+      quick: [['Services', 'servicios'], ['Portfolio', 'portfolio'], ['Quote', 'presupuesto'], ['Phone', 'telefono'], ['Contact', 'contacto']],
       greeting: 'Hi! I am the MENT CREATIVA assistant. I can help with services, portfolio, quotes or contact. What do you need?',
       fallback: 'I can help you with <strong>services</strong>, <strong>portfolio</strong>, <strong>quotes</strong> or <strong>contact</strong>. Choose an option or type your question.',
       intents: [
@@ -83,11 +87,13 @@
         [['portfolio', 'work', 'projects', 'project', 'examples'],
           'You can see some of our work in the <a href="./portfolio.html">portfolio</a>.'],
         [['quote', 'budget', 'price', 'how much', 'cost', 'rate'],
-          'For a quote we need to know what you need. Fill in the <a href="./hola.html">contact form</a> or email <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
+          'For a quote we need to know what you need. Call <a href="tel:+34640543626">+34 640 543 626</a>, fill in the <a href="./hola.html">contact form</a> or email <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
         [['team', 'staff', 'who are you', 'people', 'agency'],
           'Meet the team on our <a href="./staff.html">staff</a> page.'],
-        [['contact', 'email', 'phone', 'call', 'talk'],
-          'Email <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a> or use the <a href="./hola.html">form</a>.'],
+        [['phone', 'phone number', 'customer service', 'customer support', 'call', 'call us', 'talk on the phone', 'telephone number', 'hotline'],
+          'You can call us on <a href="tel:+34640543626">+34 640 543 626</a>. That is our customer service phone number.'],
+        [['contact', 'email', 'message', 'write', 'get in touch'],
+          'Call <a href="tel:+34640543626">+34 640 543 626</a>, email <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a> or use the <a href="./hola.html">form</a>.'],
         [['privacy', 'legal', 'terms', 'data'],
           'Our policy is on the <a href="./aviso-legal.html">legal notice</a> page.'],
         [['wines', 'wine', 'wines'],
@@ -107,7 +113,7 @@
     fr: {
       open: 'Ouvrir le chat', title: 'Chat MENT CREATIVA', close: 'Fermer',
       placeholder: 'Écrivez votre message...', send: 'Envoyer',
-      quick: [['Services', 'servicios'], ['Portfolio', 'portfolio'], ['Devis', 'presupuesto'], ['Contact', 'contacto']],
+      quick: [['Services', 'servicios'], ['Portfolio', 'portfolio'], ['Devis', 'presupuesto'], ['Téléphone', 'telefono'], ['Contact', 'contacto']],
       greeting: 'Bonjour ! Je suis l’assistant MENT CREATIVA. Je peux vous aider avec les services, le portfolio, un devis ou le contact. Que souhaitez-vous ?',
       fallback: 'Je peux vous aider avec les <strong>services</strong>, le <strong>portfolio</strong>, un <strong>devis</strong> ou le <strong>contact</strong>. Choisissez une option ou écrivez votre question.',
       intents: [
@@ -116,11 +122,13 @@
         [['portfolio', 'travaux', 'projets', 'projet', 'exemples'],
           'Vous pouvez voir certains de nos travaux dans le <a href="./portfolio.html">portfolio</a>.'],
         [['devis', 'prix', 'combien', 'coût', 'tarif', 'cotation'],
-          'Pour un devis, nous devons savoir ce dont vous avez besoin. Remplissez le <a href="./hola.html">formulaire de contact</a> ou écrivez-nous à <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
+          'Pour un devis, nous devons savoir ce dont vous avez besoin. Appelez-nous au <a href="tel:+34640543626">+34 640 543 626</a>, remplissez le <a href="./hola.html">formulaire de contact</a> ou écrivez-nous à <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
         [['equipe', 'staff', 'qui etes', 'personnes', 'agence'],
           'Découvrez l’équipe sur la page <a href="./staff.html">staff</a>.'],
-        [['contact', 'email', 'telephone', 'appeler', 'parler'],
-          'Écrivez-nous à <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a> ou utilisez le <a href="./hola.html">formulaire</a>.'],
+        [['telephone', 'numero de telephone', 'service client', 'service clientele', 'customer service', 'appeler', 'appel', 'parler au telephone', 'hotline'],
+          'Vous pouvez nous appeler au <a href="tel:+34640543626">+34 640 543 626</a>. C’est notre numéro de service client.'],
+        [['contact', 'email', 'message', 'ecrire', 'nous contacter'],
+          'Appelez-nous au <a href="tel:+34640543626">+34 640 543 626</a>, écrivez-nous à <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a> ou utilisez le <a href="./hola.html">formulaire</a>.'],
         [['confidentialite', 'mentions legales', 'legal', 'donnees'],
           'Notre politique est sur la page <a href="./aviso-legal.html">mentions légales</a>.'],
         [['wines', 'vin', 'vins'],
@@ -233,6 +241,12 @@
     });
   }
 
+  function hasWord(q, w) {
+    if (!w) return false;
+    var esc = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp('(^|[^a-z0-9])' + esc + '([^a-z0-9]|$)').test(q);
+  }
+
   function respond(key) {
     var q = norm(key);
     var best = -1;
@@ -241,7 +255,7 @@
       var words = t.intents[i][0];
       for (var j = 0; j < words.length; j++) {
         var w = norm(words[j]);
-        if (w && q.indexOf(w) >= 0 && w.length > bestLen) {
+        if (hasWord(q, w) && w.length > bestLen) {
           best = i;
           bestLen = w.length;
         }
