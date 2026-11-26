@@ -2,6 +2,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<style id="ment-menu-fix">
+#comp-lilkc39y.hidden-during-prewarmup,
+#comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39ynavContainer,
+#comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39yitemsContainer,
+#comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39yitemsContainer li,
+#comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39yitemsContainer a,
+#comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39yitemsContainer p{visibility:visible!important}
+</style>
+<script id="ment-menu-click-fix">
+document.addEventListener('click',function(e){
+  if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var t=e.target;
+  var a=t&&t.closest?t.closest('a.fin_uM'):null;
+  if(a){e.preventDefault();e.stopImmediatePropagation();window.location.href=a.href;}
+},true);
+</script>
+
 <script id="ment-worker-local">
 (function(){
   var Native=window.Worker;
