@@ -3,6 +3,18 @@
     {
       "source": "/chat-proxy/:path*",
       "destination": "https://engage.wixapps.net/:path*"
+    },
+    {
+      "source": "/_api/chat-web/:path*",
+      "destination": "https://engage.wixapps.net/_api/chat-web/:path*"
+    },
+    {
+      "source": "/_api/presence-service/:path*",
+      "destination": "https://engage.wixapps.net/_api/presence-service/:path*"
+    },
+    {
+      "source": "/serverless/chat-event-reporter/:path*",
+      "destination": "https://engage.wixapps.net/serverless/chat-event-reporter/:path*"
     }
   ],
   "redirects": [
