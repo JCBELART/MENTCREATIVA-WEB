@@ -2,6 +2,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script id="ment-gallery-persist">
+(function(){
+  var saved=null, restores=0;
+  function capture(){
+    var g=document.getElementById('ment-portfolio-gallery');
+    if(g&&!saved) saved=g.outerHTML;
+  }
+  function restore(){
+    if(!saved||restores>6) return;
+    var w=document.getElementById('comp-iohcdgax');
+    if(!w) return;
+    if(!document.getElementById('ment-portfolio-gallery')){
+      w.innerHTML=saved;
+      restores++;
+    }
+  }
+  function start(){
+    capture();
+    if(!saved) return;
+    var ob=new MutationObserver(function(){restore();});
+    ob.observe(document.documentElement,{childList:true,subtree:true});
+    var n=0;
+    var iv=setInterval(function(){restore();if(++n>60)clearInterval(iv);},100);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
+})();
+</script>
+
 <style id="ment-menu-fix">
 #comp-lilkc39y.hidden-during-prewarmup,
 #comp-lilkc39y.hidden-during-prewarmup #comp-lilkc39ynavContainer,
