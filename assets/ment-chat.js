@@ -146,9 +146,6 @@
   var css = document.createElement('style');
   css.id = 'ment-chat-css';
   css.textContent = [
-    '#comp-kettnbtr{pointer-events:none!important}',
-    '.ment-chat-btn{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#007a68;color:#fff;border:0;box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2147483000}',
-    '.ment-chat-btn svg{width:28px;height:28px;fill:#fff}',
     '.ment-chat-panel{position:fixed;right:16px;bottom:84px;width:min(320px,calc(100vw - 32px));height:min(440px,calc(100vh - 110px));background:#fff;border:2px solid #007a68;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden;font:14px/1.45 Arial,sans-serif;color:#222;z-index:2147483000}',
     '.ment-chat-panel[hidden]{display:none!important}',
     '.ment-chat-head{background:#007a68;color:#fff;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;font-weight:bold;flex:0 0 auto}',
@@ -163,18 +160,18 @@
     '.ment-chat-form{display:flex;gap:6px;padding:10px;border-top:1px solid #d5e8e4;background:#fff;flex:0 0 auto}',
     '.ment-chat-input{flex:1;min-width:0;height:40px;border:1px solid #777;border-radius:6px;padding:0 10px;font-size:14px;color:#222}',
     '.ment-chat-send{background:#007a68;color:#fff;border:0;border-radius:6px;min-width:74px;min-height:40px;cursor:pointer;font-weight:bold}',
-    '@media (max-width:480px){.ment-chat-panel{right:8px;bottom:80px;width:calc(100vw - 16px);height:min(440px,calc(100vh - 100px))}.ment-chat-btn{right:12px;bottom:12px}}'
+    '@media (max-width:480px){.ment-chat-panel{right:8px;bottom:80px;width:calc(100vw - 16px);height:min(440px,calc(100vh - 100px))}}'
   ].join('\n');
   document.head.appendChild(css);
 
-  var btn = document.createElement('button');
-  btn.type = 'button';
-  btn.id = 'ment-chat-open';
-  btn.className = 'ment-chat-btn';
-  btn.setAttribute('aria-label', t.open);
-  btn.setAttribute('aria-expanded', 'false');
-  btn.setAttribute('aria-controls', 'ment-chat-panel');
-  btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.7 1.2 5.2 3.2 6.9L4 22l4.1-2.1c1.2.4 2.6.6 3.9.6 5.5 0 10-4.1 10-9.3S17.5 2 12 2z"/></svg>';
+  var btn = document.getElementById('ment-chat-open');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'ment-chat-open';
+    btn.className = 'ment-chat-btn';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.7 1.2 5.2 3.2 6.9L4 22l4.1-2.1c1.2.4 2.6.6 3.9.6 5.5 0 10-4.1 10-9.3S17.5 2 12 2z"/></svg>';
+  }
 
   var panel = document.createElement('div');
   panel.id = 'ment-chat-panel';
@@ -191,8 +188,11 @@
     '<input class="ment-chat-input" id="ment-chat-input" type="text" autocomplete="off" aria-label="' + t.placeholder + '" placeholder="' + t.placeholder + '"/>' +
     '<button class="ment-chat-send" type="submit">' + t.send + '</button></form>';
 
-  document.body.appendChild(btn);
+  if (!document.body.contains(btn)) document.body.appendChild(btn);
   document.body.appendChild(panel);
+  btn.setAttribute('aria-label', t.open);
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', 'ment-chat-panel');
 
   var log = document.getElementById('ment-chat-log');
   var quick = document.getElementById('ment-chat-quick');
@@ -290,4 +290,5 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !panel.hidden) closeChat();
   });
+  if (window.__mentChatPendingOpen) openChat();
 })();
