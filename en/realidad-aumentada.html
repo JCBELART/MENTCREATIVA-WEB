@@ -818,7 +818,7 @@ document.addEventListener('submit', function (e) {
     var code = map[el.getAttribute('aria-label') || (el.textContent||'').trim()];
     if (!code) return;
     var here = location.pathname.replace(/\/(es|ca|en|fr)\//, '/');
-    var dest = '/' + code + here.replace(/^\//, '') + location.hash;
+    var dest = '/' + code + '/' + here.replace(/^\//, '') + location.hash;
     if (dest === location.pathname + location.hash) return;
     e.preventDefault();
     e.stopImmediatePropagation();

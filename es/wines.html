@@ -932,7 +932,7 @@ button.twJknM{width:62px!important;height:62px!important;margin-top:-13px!import
     var code = map[el.getAttribute('aria-label') || (el.textContent||'').trim()];
     if (!code) return;
     var here = location.pathname.replace(/\/(es|ca|en|fr)\//, '/');
-    var dest = '/' + code + here.replace(/^\//, '') + location.hash;
+    var dest = '/' + code + '/' + here.replace(/^\//, '') + location.hash;
     if (dest === location.pathname + location.hash) return;
     e.preventDefault();
     e.stopImmediatePropagation();
