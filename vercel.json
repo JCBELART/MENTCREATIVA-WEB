@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/chat-proxy/:path*",
+      "destination": "https://engage.wixapps.net/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/",
