@@ -235,18 +235,25 @@
 
   function respond(key) {
     var q = norm(key);
+    var best = -1;
+    var bestLen = 0;
     for (var i = 0; i < t.intents.length; i++) {
       var words = t.intents[i][0];
       for (var j = 0; j < words.length; j++) {
-        if (q.indexOf(norm(words[j])) >= 0) {
-          botSay(t.intents[i][1]);
-          showQuick(false);
-          return;
+        var w = norm(words[j]);
+        if (w && q.indexOf(w) >= 0 && w.length > bestLen) {
+          best = i;
+          bestLen = w.length;
         }
       }
     }
-    botSay(t.fallback);
-    showQuick(true);
+    if (best >= 0) {
+      botSay(t.intents[best][1]);
+      showQuick(false);
+    } else {
+      botSay(t.fallback);
+      showQuick(true);
+    }
   }
 
   function ask(text) {
