@@ -26,6 +26,15 @@
     if (conocido(r && r.message || r)) e.preventDefault();
   }, true);
 })();
+
+(function(){
+  var orig = console.error;
+  console.error = function(){
+    var msg = Array.prototype.map.call(arguments, String).join(' ');
+    if (/suspense rendered fallback/.test(msg)) return;
+    return orig.apply(console, arguments);
+  };
+})();
 </script>
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
