@@ -2,6 +2,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script id="ment-worker-local">
+(function(){
+  var Native=window.Worker;
+  if(!Native)return;
+  function LocalWorker(url,opts){
+    if(typeof url==='string'&&/wixsite\.com.*clientWorker/.test(url)){
+      url='/assets/cdn/clientWorker.9c5468d5.bundle.min.js';
+    }
+    return new Native(url,opts);
+  }
+  LocalWorker.prototype=Native.prototype;
+  window.Worker=LocalWorker;
+})();
+</script>
 <script id="ment-console-silencioso">
 (function(){
   var pat = /Failed to construct 'Worker'|did not find the pageId|platformWorkerPromise|Failed to read the 'sessionStorage'/;
