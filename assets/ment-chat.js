@@ -296,6 +296,8 @@
   closeBtn.addEventListener('click', closeChat);
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    // El parche de FormSubmit escucha en document: el chat nunca debe enviar correo.
+    e.stopPropagation();
     var v = input.value.trim();
     if (!v) return;
     input.value = '';
