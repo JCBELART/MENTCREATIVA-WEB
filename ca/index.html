@@ -43,16 +43,49 @@ document.addEventListener('click',function(e){
 },true);
 </script>
 <script id="ment-home-links-fix">
-document.addEventListener('click',function(e){
-  if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-  var t=e.target;
-  var a=t&&t.closest?t.closest('a.wixui-button[href$="hola.html"],a.wixui-button[href$="staff.html"],a.wixui-button[href$="servicios.html"]'):null;
-  if(a){
+(function(){
+  var LANG=(document.documentElement.lang||location.pathname.split('/')[1]||'es').toLowerCase();
+  if(!/^(es|ca|en|fr)$/.test(LANG))LANG='es';
+  function dest(kind){
+    var base='https://mentcreativa.store/'+LANG+'/';
+    if(kind==='hola')return base+'hola.html';
+    if(kind==='staff')return base+'staff.html';
+    return base+'servicios.html';
+  }
+  function kindOf(a){
+    var label=(a.getAttribute('aria-label')||a.innerText||a.textContent||'').toUpperCase().replace(/\s+/g,' ').trim();
+    if(/HOLA|HELLO|BONJOUR/.test(label))return 'hola';
+    if(/STAFF/.test(label))return 'staff';
+    if(/SERVICIOS|SERVEIS|SERVICES/.test(label))return 'servicios';
+    return null;
+  }
+  function pin(){
+    var as=document.querySelectorAll('a.wixui-button,a[data-testid="linkElement"]');
+    for(var i=0;i<as.length;i++){
+      var kind=kindOf(as[i]);
+      if(!kind)continue;
+      var d=dest(kind);
+      if(as[i].getAttribute('href')!==d)as[i].setAttribute('href',d);
+    }
+  }
+  pin();
+  try{
+    new MutationObserver(pin).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['href']});
+  }catch(err){}
+  document.addEventListener('click',function(e){
+    if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    var t=e.target;
+    var a=t&&t.closest?t.closest('a'):null;
+    if(!a)return;
+    var kind=kindOf(a);
+    if(!kind)return;
+    var d=dest(kind);
     e.preventDefault();
     e.stopImmediatePropagation();
-    window.location.href=a.href;
-  }
-},true);
+    a.setAttribute('href',d);
+    window.location.href=d;
+  },true);
+})();
 </script>
 
 <script id="ment-worker-local">
