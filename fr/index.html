@@ -18,6 +18,18 @@ document.addEventListener('click',function(e){
   if(a){e.preventDefault();e.stopImmediatePropagation();window.location.href=a.href;}
 },true);
 </script>
+<script id="ment-view-click-fix">
+document.addEventListener('click',function(e){
+  if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var t=e.target;
+  var a=t&&t.closest?t.closest('a[aria-label="VIEW"]'):null;
+  if(a){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.location.href=a.href;
+  }
+},true);
+</script>
 
 <script id="ment-worker-local">
 (function(){
