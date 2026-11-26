@@ -4,32 +4,39 @@
 <head>
 <script id="ment-gallery-persist">
 (function(){
-  var saved=null, restores=0, lightboxBound=false;
+  var saved=null, restores=0, box=null, img=null;
   function capture(){
     var g=document.getElementById('ment-portfolio-gallery');
     if(g&&!saved) saved=g.outerHTML;
   }
   function ensureLightbox(){
-    var box=document.getElementById('ment-lightbox');
+    box=document.getElementById('ment-lightbox');
     if(!box){
       box=document.createElement('div');
       box.id='ment-lightbox';
       box.innerHTML='<span class="ment-close" aria-label="Cerrar">&#215;</span><img alt="">';
       document.body.appendChild(box);
     }
-    if(lightboxBound) return;
-    lightboxBound=true;
-    var img=box.querySelector('img');
+    img=box.querySelector('img');
     function close(){box.classList.remove('open');img.removeAttribute('src');}
-    document.addEventListener('click',function(e){
-      var t=e.target;
-      if(t&&t.closest){
-        var a=t.closest('#ment-portfolio-gallery a.ment-cell');
-        if(a){e.preventDefault();img.src=a.getAttribute('href');img.alt=a.getAttribute('title')||'';box.classList.add('open');return;}
-      }
-      if(t===box||(t&&t.classList&&t.classList.contains('ment-close'))) close();
-    });
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    box.onclick=function(e){if(e.target===box||(e.target.classList&&e.target.classList.contains('ment-close')))close();};
+    document.onkeydown=function(e){if(e.key==='Escape')close();};
+  }
+  function bindGallery(){
+    var as=document.querySelectorAll('#ment-portfolio-gallery a.ment-cell');
+    for(var i=0;i<as.length;i++){
+      (function(a){
+        if(a.getAttribute('data-lb')) return;
+        a.setAttribute('data-lb','1');
+        a.onclick=function(e){
+          e.preventDefault();
+          img.src=a.getAttribute('href');
+          img.alt=a.getAttribute('title')||'';
+          box.classList.add('open');
+          return false;
+        };
+      })(as[i]);
+    }
   }
   function restore(){
     if(!saved||restores>6) return;
@@ -39,11 +46,13 @@
       w.innerHTML=saved;
       restores++;
     }
+    bindGallery();
     ensureLightbox();
   }
   function start(){
     capture();
     ensureLightbox();
+    bindGallery();
     if(!saved) return;
     var ob=new MutationObserver(function(){restore();});
     ob.observe(document.documentElement,{childList:true,subtree:true});
