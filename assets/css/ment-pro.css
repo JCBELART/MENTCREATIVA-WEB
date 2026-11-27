@@ -17,3 +17,13 @@
 .ment-clients ul{display:flex;flex-wrap:wrap;gap:var(--ment-s3);padding:0;margin:0;list-style:none}
 .ment-clients li{border:1px solid var(--ment-line);border-radius:var(--ment-radius);padding:var(--ment-s2) var(--ment-s3);background:#fff;font-size:14px}
 @media(max-width:600px){.ment-case{grid-template-columns:1fr}.ment-cases h2,.ment-clients h2{font-size:22px}}
+
+.ment-faq{max-width:980px;margin:24px auto;padding:0 16px;font-family:var(--ment-font);color:var(--ment-ink)}
+.ment-faq h2{font-size:26px;line-height:1.25;margin:0 0 16px}
+.ment-faq details{border:1px solid var(--ment-line);border-radius:var(--ment-radius);background:#fff;margin:0 0 8px}
+.ment-faq summary{cursor:pointer;min-height:44px;padding:12px 16px;font-weight:bold;font-size:15px}
+.ment-faq p{margin:0;padding:0 16px 12px;font-size:15px;line-height:1.5}
+
+.ment-internal-links{max-width:980px;margin:24px auto;padding:16px;border:1px solid var(--ment-line);border-radius:var(--ment-radius);background:var(--ment-bg);font-family:var(--ment-font);color:var(--ment-ink)}
+.ment-internal-links h2{font-size:22px;margin:0 0 8px}
+.ment-internal-links a{display:inline-block;min-height:44px;padding:12px 16px;margin:0 8px 0 0;color:var(--ment-brand);font-weight:bold}
