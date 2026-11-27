@@ -1,0 +1,19 @@
+:root{--ment-brand:#007a68;--ment-ink:#222;--ment-line:#d5e8e4;--ment-bg:#fafcfc;--ment-s1:4px;--ment-s2:8px;--ment-s3:12px;--ment-s4:16px;--ment-s5:24px;--ment-radius:6px;--ment-font:Arial,Helvetica,sans-serif}
+.ment-form-note{margin:var(--ment-s3) 0 0;font:13px/1.45 var(--ment-font);text-align:center;color:#555}
+#ment-call-cta{display:none}
+@media(max-width:600px){#ment-call-cta{display:flex;position:fixed;left:12px;bottom:12px;z-index:2147482999;min-width:56px;min-height:56px;border-radius:28px;background:#fff;color:var(--ment-brand);border:2px solid var(--ment-brand);box-shadow:0 4px 14px rgba(0,0,0,.28);align-items:center;justify-content:center;text-decoration:none;font:700 13px/1 var(--ment-font);padding:0 var(--ment-s4)}}
+.ment-cases,.ment-clients{max-width:980px;margin:var(--ment-s5) auto;padding:0 var(--ment-s4);font-family:var(--ment-font);color:var(--ment-ink)}
+.ment-cases h2,.ment-clients h2{font-size:26px;line-height:1.25;margin:0 0 var(--ment-s4)}
+.ment-filters{display:flex;flex-wrap:wrap;gap:var(--ment-s2);margin:0 0 var(--ment-s4)}
+.ment-filters button,.ment-case a{font:700 14px/1 var(--ment-font);text-transform:uppercase;border:1px solid var(--ment-brand);border-radius:var(--ment-radius);padding:var(--ment-s2) var(--ment-s4);min-height:44px;cursor:pointer;text-align:center;text-decoration:none}
+.ment-filters button{background:#fff;color:var(--ment-brand)}
+.ment-filters button[aria-pressed="true"]{background:var(--ment-brand);color:#fff}
+.ment-case{display:grid;grid-template-columns:1fr 1fr;gap:var(--ment-s4);padding:var(--ment-s4);margin:0 0 var(--ment-s4);border:1px solid var(--ment-line);border-radius:var(--ment-radius);background:var(--ment-bg)}
+.ment-case picture,.ment-case img{display:block;width:100%}
+.ment-case img{height:auto;border-radius:var(--ment-radius)}
+.ment-case h3{font-size:18px;margin:0 0 var(--ment-s2)}
+.ment-case p{margin:0 0 var(--ment-s2);font-size:15px;line-height:1.5}
+.ment-case a{display:inline-block;background:var(--ment-brand);color:#fff}
+.ment-clients ul{display:flex;flex-wrap:wrap;gap:var(--ment-s3);padding:0;margin:0;list-style:none}
+.ment-clients li{border:1px solid var(--ment-line);border-radius:var(--ment-radius);padding:var(--ment-s2) var(--ment-s3);background:#fff;font-size:14px}
+@media(max-width:600px){.ment-case{grid-template-columns:1fr}.ment-cases h2,.ment-clients h2{font-size:22px}}

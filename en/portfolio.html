@@ -2,6 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="ment-pro-tokens">
+:root{--ment-brand:#007a68;--ment-ink:#222;--ment-line:#d5e8e4;--ment-bg:#fafcfc;--ment-s1:4px;--ment-s2:8px;--ment-s3:12px;--ment-s4:16px;--ment-s5:24px;--ment-radius:6px;--ment-font:Arial,Helvetica,sans-serif}
+.ment-form-note{margin:var(--ment-s3) 0 0;font:13px/1.45 var(--ment-font);text-align:center;color:#555}
+#ment-call-cta{display:none}
+@media(max-width:600px){#ment-call-cta{display:flex;position:fixed;left:12px;bottom:12px;z-index:2147482999;min-width:56px;min-height:56px;border-radius:28px;background:#fff;color:var(--ment-brand);border:2px solid var(--ment-brand);box-shadow:0 4px 14px rgba(0,0,0,.28);align-items:center;justify-content:center;text-decoration:none;font:700 13px/1 var(--ment-font);padding:0 var(--ment-s4)}}
+.ment-cases,.ment-clients{max-width:980px;margin:var(--ment-s5) auto;padding:0 var(--ment-s4);font-family:var(--ment-font);color:var(--ment-ink)}
+.ment-cases h2,.ment-clients h2{font-size:26px;line-height:1.25;margin:0 0 var(--ment-s4)}
+.ment-filters{display:flex;flex-wrap:wrap;gap:var(--ment-s2);margin:0 0 var(--ment-s4)}
+.ment-filters button,.ment-case a{font:700 14px/1 var(--ment-font);text-transform:uppercase;border:1px solid var(--ment-brand);border-radius:var(--ment-radius);padding:var(--ment-s2) var(--ment-s4);min-height:44px;cursor:pointer;text-align:center;text-decoration:none}
+.ment-filters button{background:#fff;color:var(--ment-brand)}
+.ment-filters button[aria-pressed="true"]{background:var(--ment-brand);color:#fff}
+.ment-case{display:grid;grid-template-columns:1fr 1fr;gap:var(--ment-s4);padding:var(--ment-s4);margin:0 0 var(--ment-s4);border:1px solid var(--ment-line);border-radius:var(--ment-radius);background:var(--ment-bg)}
+.ment-case picture,.ment-case img{display:block;width:100%}
+.ment-case img{height:auto;border-radius:var(--ment-radius)}
+.ment-case h3{font-size:18px;margin:0 0 var(--ment-s2)}
+.ment-case p{margin:0 0 var(--ment-s2);font-size:15px;line-height:1.5}
+.ment-case a{display:inline-block;background:var(--ment-brand);color:#fff}
+.ment-clients ul{display:flex;flex-wrap:wrap;gap:var(--ment-s3);padding:0;margin:0;list-style:none}
+.ment-clients li{border:1px solid var(--ment-line);border-radius:var(--ment-radius);padding:var(--ment-s2) var(--ment-s3);background:#fff;font-size:14px}
+@media(max-width:600px){.ment-case{grid-template-columns:1fr}.ment-cases h2,.ment-clients h2{font-size:22px}}
+</style>
 <script id="ment-gallery-persist">
 (function(){
   var saved=null, restores=0, box=null, img=null;
@@ -271,8 +292,8 @@ document.addEventListener('click',function(e){
 /*# sourceMappingURL=/assets/cdn/8feafae863-TPABaseComponent.88cd9698.chunk.min.css.map*/</style>
 <style data-href="/assets/cdn/3f8f99aa29-group_7.c472a333.chunk.min.css">.QrIus{height:auto!important}.bsFmQ{overflow:hidden!important}
 /*# sourceMappingURL=/assets/cdn/3f8f99aa29-group_7.c472a333.chunk.min.css.map*/</style>
-<title>PORTFOLIO | MENTCREATIVA.COM</title>
-  <meta name="description" content="MENT CREATIVA — Creative design, branding, multimedia and digital experiences in Barcelona."/>
+<title>Portfolio | Creative projects | MENT CREATIVA</title>
+  <meta name="description" content="Explore MENT CREATIVA projects: branding, websites, photography and campaigns made in Barcelona."/>
   <link rel="canonical" href="https://mentcreativa.store/en/portfolio.html"/>
   <link rel="alternate" hreflang="es" href="https://mentcreativa.store/es/portfolio.html"/>
   <link rel="alternate" hreflang="ca" href="https://mentcreativa.store/ca/portfolio.html"/>
@@ -280,8 +301,8 @@ document.addEventListener('click',function(e){
   <link rel="alternate" hreflang="fr" href="https://mentcreativa.store/fr/portfolio.html"/>
   <link rel="alternate" hreflang="x-default" href="https://mentcreativa.store/es/portfolio.html"/>
   <meta name="robots" content="index"/>
-  <meta property="og:title" content="PORTFOLIO | MENTCREATIVA.COM"/>
-  <meta property="og:description" content="Aquí encontrarás una pequeña selección de nuestros trabajos realizados para diversos clientes."/>
+  <meta property="og:title" content="Portfolio | Creative projects | MENT CREATIVA"/>
+  <meta property="og:description" content="Explore MENT CREATIVA projects: branding, websites, photography and campaigns made in Barcelona."/>
   <meta property="og:url" content="https://mentcreativa.store/en/portfolio.html"/>
   <meta property="og:site_name" content="MENTCREATIVA.COM"/>
   <meta property="og:type" content="website"/>
@@ -291,8 +312,8 @@ document.addEventListener('click',function(e){
   
   
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="PORTFOLIO | MENTCREATIVA.COM"/>
-  <meta name="twitter:description" content="Aquí encontrarás una pequeña selección de nuestros trabajos realizados para diversos clientes."/>
+  <meta name="twitter:title" content="Portfolio | Creative projects | MENT CREATIVA"/>
+  <meta name="twitter:description" content="Explore MENT CREATIVA projects: branding, websites, photography and campaigns made in Barcelona."/>
 <script>;(function(){function isSamePageAnchor(e) {
     const target = e.target;
     const anchor = target && target.closest && target.closest('a[data-anchor], a[data-popupid], a[href*="#"]');
@@ -483,9 +504,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   <meta property="og:image" content="https://mentcreativa.store/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="MENT CREATIVA - Agencia de publicidad en Barcelona"/>
+  <meta property="og:image:alt" content="MENT CREATIVA - Advertising agency in Barcelona"/>
   <meta name="twitter:image" content="https://mentcreativa.store/og-image.jpg"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PORTFOLIO","description":"MENT CREATIVA — Creative design, branding, multimedia and digital experiences in Barcelona.","url":"https://mentcreativa.store/en/portfolio.html","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"MENT CREATIVA","url":"https://mentcreativa.store/"},"about":{"@type":"Organization","name":"MENT CREATIVA","url":"https://mentcreativa.store/es/index.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://mentcreativa.store/en/portfolio.html#webpage","name":"Portfolio","description":"Explore MENT CREATIVA projects: branding, websites, photography and campaigns made in Barcelona.","url":"https://mentcreativa.store/en/portfolio.html","inLanguage":"en","isPartOf":{"@id":"https://mentcreativa.store/#website"},"about":{"@id":"https://mentcreativa.store/#organization"}},{"@type":"WebSite","@id":"https://mentcreativa.store/#website","name":"MENT CREATIVA","url":"https://mentcreativa.store/","inLanguage":"en"},{"@type":"LocalBusiness","@id":"https://mentcreativa.store/#organization","name":"MENT CREATIVA","url":"https://mentcreativa.store/es/index.html","image":"https://mentcreativa.store/og-image.jpg","telephone":"+34640543626","email":"joancarlesdisseny@hotmail.com","address":{"@type":"PostalAddress","streetAddress":"Carrer de Bauma, 51","postalCode":"08296","addressLocality":"Barcelona","addressRegion":"Barcelona","addressCountry":"ES"}},{"@type":"BreadcrumbList","@id":"https://mentcreativa.store/en/portfolio.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mentcreativa.store/en/index.html"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://mentcreativa.store/en/portfolio.html"}]}]}</script>
 <style id="ment-contraste">
 /* idioma activo: naranjaoriginal #ec9712 -> #ffcc80 (4.89:1 sobre #575757) */
 #comp-keiraem8 .wixui-language-menu__option[aria-current="true"],
@@ -921,5 +942,32 @@ button.twJknM{width:62px!important;height:62px!important;margin-top:-13px!import
 <button type="button" id="ment-chat-open" class="ment-chat-btn" aria-label="Open chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.7 1.2 5.2 3.2 6.9L4 22l4.1-2.1c1.2.4 2.6.6 3.9.6 5.5 0 10-4.1 10-9.3S17.5 2 12 2z"/></svg></button>
 <script>(function(){var b=document.getElementById('ment-chat-open');b.addEventListener('click',function(){window.__mentChatPendingOpen=1;if(window.__mentChatOn)return;window.__mentChatOn=1;var s=document.createElement('script');s.src='/assets/ment-chat.js?v=d974a98';document.head.appendChild(s)},{once:true})})();</script>
 <script>(function(){var n=0;function f(){var e=document.querySelector('wix-iframe#comp-iohcdgax iframe')||document.querySelector('#comp-iohcdgax iframe');if(e){e.setAttribute('title','Galería de trabajos');e.setAttribute('role','presentation');return}if(n++<40)setTimeout(f,100)}f()})();</script>
+<section class="ment-cases" id="ment-cases" aria-label="Featured projects">
+  <h2>Featured projects</h2>
+  <div class="ment-filters" role="group">
+    <button type="button" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" data-filter="identity" aria-pressed="false">Identity</button>
+    <button type="button" data-filter="packaging" aria-pressed="false">Packaging</button>
+    <button type="button" data-filter="spaces" aria-pressed="false">Spaces</button>
+  </div>
+  <article class="ment-case" data-cat="identity">
+<picture><source srcset="../assets/portfolio/modern/10-Mentcreativa_Logo_Morera.avif" type="image/avif"/><source srcset="../assets/portfolio/modern/10-Mentcreativa_Logo_Morera.webp" type="image/webp"/><img src="../assets/portfolio/10-Mentcreativa_Logo_Morera.jpg" alt="Morera logo" loading="lazy" decoding="async" width="1322" height="623"/></picture>
+<div><h3>Morera logo</h3><p><strong>A name with a long history needed an easily recognisable mark.</strong></p><p>We designed a clean, versatile logo that works across every medium.</p><p>Identity ready for stationery, web and signage.</p><a href="./portfolio.html">View portfolio</a></div>
+</article>
+  <article class="ment-case" data-cat="packaging">
+<picture><source srcset="../assets/portfolio/modern/08-Mentcreativa_Etiqueta_Vino.avif" type="image/avif"/><source srcset="../assets/portfolio/modern/08-Mentcreativa_Etiqueta_Vino.webp" type="image/webp"/><img src="../assets/portfolio/08-Mentcreativa_Etiqueta_Vino.jpg" alt="Wine label" loading="lazy" decoding="async" width="1358" height="600"/></picture>
+<div><h3>Wine label</h3><p><strong>The bottle needed to stand out on shelf without losing elegance.</strong></p><p>Label with clear hierarchy, readable typography and a careful finish.</p><p>Artwork ready for print and production.</p><a href="./portfolio.html">View portfolio</a></div>
+</article>
+  <article class="ment-case" data-cat="packaging">
+<picture><source srcset="../assets/portfolio/modern/11-Mentcreativa_Packaging_Oleum.avif" type="image/avif"/><source srcset="../assets/portfolio/modern/11-Mentcreativa_Packaging_Oleum.webp" type="image/webp"/><img src="../assets/portfolio/11-Mentcreativa_Packaging_Oleum.jpg" alt="Oleum packaging" loading="lazy" decoding="async" width="1497" height="1600"/></picture>
+<div><h3>Oleum packaging</h3><p><strong>The product needed a stronger presence at the point of sale.</strong></p><p>We designed packaging consistent with the brand and easy to recognise.</p><p>Graphic system ready for the full range.</p><a href="./portfolio.html">View portfolio</a></div>
+</article>
+  <article class="ment-case" data-cat="spaces">
+<picture><source srcset="../assets/portfolio/modern/06-Mentcreativa_Stand_Custo_1.avif" type="image/avif"/><source srcset="../assets/portfolio/modern/06-Mentcreativa_Stand_Custo_1.webp" type="image/webp"/><img src="../assets/portfolio/06-Mentcreativa_Stand_Custo_1.jpg" alt="Custo stand" loading="lazy" decoding="async" width="1024" height="768"/></picture>
+<div><h3>Custo stand</h3><p><strong>The brand had to be explained in a small, highly competitive space.</strong></p><p>Stand design with a direct message, clear flow and consistent materials.</p><p>Space ready for build and exhibition.</p><a href="./portfolio.html">View portfolio</a></div>
+</article>
+</section>
+<script id="ment-cases-filter">(function(){var s=document.getElementById('ment-cases');if(!s)return;var bs=s.querySelectorAll('.ment-filters button');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});var v=b.getAttribute('data-filter');s.querySelectorAll('.ment-case').forEach(function(c){c.hidden=v!=='all'&&c.getAttribute('data-cat')!==v})})})})();</script>
+<a id="ment-call-cta" href="tel:+34640543626" aria-label="Call a MENT CREATIVA al +34 640 543 626">Call</a>
 </body>
 </html>
