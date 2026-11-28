@@ -151,6 +151,11 @@
   var lang = D[seg] ? seg : 'es';
   var t = D[lang];
 
+  // Rutas absolutas con idioma: /es evita que ./ Servicios resuelva a /servicios.html.
+  t.intents.forEach(function (it) {
+    it[1] = it[1].replace(/href="\.\//g, 'href="/' + lang + '/');
+  });
+
   var css = document.createElement('style');
   css.id = 'ment-chat-css';
   css.textContent = [
