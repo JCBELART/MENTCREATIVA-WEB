@@ -12,9 +12,9 @@
       greeting: '¡Hola! Soy el asistente de MENT CREATIVA. Puedo ayudarte con servicios, portfolio, presupuesto o contacto. ¿Qué necesitas?',
       fallback: 'Puedo ayudarte con <strong>servicios</strong>, <strong>portfolio</strong>, <strong>presupuesto</strong> o <strong>contacto</strong>. Elige una opción o escribe tu pregunta.',
       intents: [
-        [['servicio', 'servicios', 'que haceis', 'web', 'seo', 'diseno', 'diseno web', 'marketing'],
+        [['servicio', 'servicios', 'que haceis', 'web', 'seo', 'diseno', 'diseno web', 'marketing', 'producto', 'productos', 'productes', 'products', 'produits', 'productos o servicios', 'que ofreceis', 'què oferiu', 'what do you offer', 'que faites vous', 'oferta', 'ofertes'],
           'Trabajamos <strong>identidad corporativa, diseño y desarrollo web, posicionamiento SEO, hosting y contenido</strong>. <a href="./servicios.html">Ver todos los servicios</a>.'],
-        [['portfolio', 'trabajos', 'proyectos', 'proyecto', 'ejemplos'],
+        [['portfolio', 'trabajos', 'proyectos', 'proyecto', 'ejemplos', 'galeria', 'galería', 'galery', 'gallery', 'realizaciones', 'realitzacions', 'réalisations'],
           'Puedes ver algunos de nuestros trabajos en el <a href="./portfolio.html">portfolio</a>.'],
         [['presupuesto', 'precio', 'cuanto cuesta', 'cotizacion', 'tarifa', 'cuanto', 'coste'],
           'Para un presupuesto necesitamos saber qué necesitas. Llámanos al <a href="tel:+34640543626">+34 640 543 626</a>, rellena el <a href="./hola.html">formulario de contacto</a> o escríbenos a <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
@@ -47,9 +47,9 @@
       greeting: 'Hola! Sóc l’assistent de MENT CREATIVA. Puc ajudar-te amb serveis, portfoli, pressupost o contacte. Què necessites?',
       fallback: 'Puc ajudar-te amb <strong>serveis</strong>, <strong>portfoli</strong>, <strong>pressupost</strong> o <strong>contacte</strong>. Tria una opció o escriu la teva pregunta.',
       intents: [
-        [['servei', 'serveis', 'que feu', 'web', 'seo', 'disseny', 'marketing'],
+        [['servei', 'serveis', 'que feu', 'web', 'seo', 'disseny', 'marketing', 'producto', 'productos', 'productes', 'products', 'produits', 'productos o servicios', 'que ofreceis', 'què oferiu', 'what do you offer', 'que faites vous', 'oferta', 'ofertes'],
           'Treballem <strong>identitat corporativa, disseny i desenvolupament web, posicionament SEO, hosting i contingut</strong>. <a href="./servicios.html">Veure tots els serveis</a>.'],
-        [['portfoli', 'treballs', 'projectes', 'projecte', 'exemples'],
+        [['portfoli', 'treballs', 'projectes', 'projecte', 'exemples', 'galeria', 'galería', 'galery', 'gallery', 'realizaciones', 'realitzacions', 'réalisations'],
           'Pots veure alguns dels nostres treballs al <a href="./portfolio.html">portfoli</a>.'],
         [['pressupost', 'preu', 'quant costa', 'tarifa', 'quant', 'costic'],
           'Per a un pressupost necessitem saber què necessites. Tria-nos al <a href="tel:+34640543626">+34 640 543 626</a>, omple el <a href="./hola.html">formulari de contacte</a> o escriu-nos a <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
@@ -82,9 +82,9 @@
       greeting: 'Hi! I am the MENT CREATIVA assistant. I can help with services, portfolio, quotes or contact. What do you need?',
       fallback: 'I can help you with <strong>services</strong>, <strong>portfolio</strong>, <strong>quotes</strong> or <strong>contact</strong>. Choose an option or type your question.',
       intents: [
-        [['service', 'services', 'what do you do', 'web', 'seo', 'design', 'marketing'],
+        [['service', 'services', 'what do you do', 'web', 'seo', 'design', 'marketing', 'producto', 'productos', 'productes', 'products', 'produits', 'productos o servicios', 'que ofreceis', 'què oferiu', 'what do you offer', 'que faites vous', 'oferta', 'ofertes'],
           'We work on <strong>corporate identity, web design and development, SEO, hosting and content</strong>. <a href="./servicios.html">See all services</a>.'],
-        [['portfolio', 'work', 'projects', 'project', 'examples'],
+        [['portfolio', 'work', 'projects', 'project', 'examples', 'galeria', 'galería', 'galery', 'gallery', 'realizaciones', 'realitzacions', 'réalisations'],
           'You can see some of our work in the <a href="./portfolio.html">portfolio</a>.'],
         [['quote', 'budget', 'price', 'how much', 'cost', 'rate'],
           'For a quote we need to know what you need. Call <a href="tel:+34640543626">+34 640 543 626</a>, fill in the <a href="./hola.html">contact form</a> or email <a href="mailto:joancarlesdisseny@hotmail.com">joancarlesdisseny@hotmail.com</a>.'],
@@ -117,9 +117,9 @@
       greeting: 'Bonjour ! Je suis l’assistant MENT CREATIVA. Je peux vous aider avec les services, le portfolio, un devis ou le contact. Que souhaitez-vous ?',
       fallback: 'Je peux vous aider avec les <strong>services</strong>, le <strong>portfolio</strong>, un <strong>devis</strong> ou le <strong>contact</strong>. Choisissez une option ou écrivez votre question.',
       intents: [
-        [['service', 'services', 'que faites', 'web', 'seo', 'design', 'marketing'],
+        [['service', 'services', 'que faites', 'web', 'seo', 'design', 'marketing', 'producto', 'productos', 'productes', 'products', 'produits', 'productos o servicios', 'que ofreceis', 'què oferiu', 'what do you offer', 'que faites vous', 'oferta', 'ofertes'],
           'Nous travaillons sur <strong>l’identité visuelle, la création et le développement web, le référencement SEO, l’hébergement et le contenu</strong>. <a href="./servicios.html">Voir tous les services</a>.'],
-        [['portfolio', 'travaux', 'projets', 'projet', 'exemples'],
+        [['portfolio', 'travaux', 'projets', 'projet', 'exemples', 'galeria', 'galería', 'galery', 'gallery', 'realizaciones', 'realitzacions', 'réalisations'],
           'Vous pouvez voir certains de nos travaux dans le <a href="./portfolio.html">portfolio</a>.'],
         [['devis', 'prix', 'combien', 'coût', 'tarif', 'cotation'],
           'Pour un devis, nous devons savoir ce dont vous avez besoin. Appelez-nous au <a href="tel:+34640543626">+34 640 543 626</a>, remplissez le <a href="./hola.html">formulaire de contact</a> ou écrivez-nous à <a href="mailto:info@mentcreativa.es">info@mentcreativa.es</a>.'],
@@ -155,6 +155,45 @@
   t.intents.forEach(function (it) {
     it[1] = it[1].replace(/href="\.\//g, 'href="/' + lang + '/');
   });
+
+  var ALT = {
+    es: { here: 'estás aquí', portfolio: 'Ver portfolio', services: 'Ver servicios' },
+    ca: { here: 'ets aquí', portfolio: 'Veure portfoli', services: 'Veure serveis' },
+    en: { here: 'you are already here', portfolio: 'View portfolio', services: 'View services' },
+    fr: { here: 'vous êtes déjà ici', portfolio: 'Voir le portfolio', services: 'Voir les services' }
+  }[lang];
+
+  function editDistance(a, b) {
+    if (a === b) return 0;
+    if (Math.abs(a.length - b.length) > 1) return 2;
+    var prev = [], curr = [], i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      curr[0] = i;
+      for (j = 1; j <= b.length; j++) {
+        curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+      }
+      for (j = 0; j <= b.length; j++) prev[j] = curr[j];
+    }
+    return prev[b.length];
+  }
+
+  function currentPage() {
+    var parts = location.pathname.split('/').filter(Boolean);
+    return (parts.length > 1 ? parts[parts.length - 1] : 'index').replace(/\.html$/i, '').toLowerCase();
+  }
+
+  function smartAnswer(html) {
+    var cur = currentPage();
+    if (cur === 'index') return html;
+    var re = new RegExp('<a href="/' + lang + '/' + cur + '\\.html">([^<]*)</a>', 'i');
+    var m = html.match(re);
+    if (!m) return html;
+    var alt = cur === 'servicios' ? 'portfolio' : 'servicios';
+    var label = alt === 'portfolio' ? ALT.portfolio : ALT.services;
+    return html.replace(re, '<strong>' + m[1] + ' (' + ALT.here + ')</strong>') +
+      ' <a href="/' + lang + '/' + alt + '.html">' + label + '</a>.';
+  }
 
   var css = document.createElement('style');
   css.id = 'ment-chat-css';
@@ -214,6 +253,13 @@
   var closeBtn = document.getElementById('ment-chat-close');
   var greeted = false;
 
+  var topBtn = document.getElementById('mentBackToTop');
+  function syncTopButton() {
+    if (!topBtn) return;
+    topBtn.style.display = panel.hidden ? '' : 'none';
+  }
+
+
   function norm(s) {
     return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
@@ -248,8 +294,13 @@
 
   function hasWord(q, w) {
     if (!w) return false;
-    var esc = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return new RegExp('(^|[^a-z0-9])' + esc + '([^a-z0-9]|$)').test(q);
+    w = norm(w);
+    var esc = w.replace(/[.*+?^()|[\]{}$]/g, '\\$&');
+    if (new RegExp('(^|[^a-z0-9])' + esc + '([^a-z0-9]|$)').test(q)) return true;
+    if (w.length < 5) return false;
+    return q.split(/[^a-z0-9]+/).some(function (tok) {
+      return tok && Math.abs(tok.length - w.length) <= 1 && editDistance(tok, w) <= 1;
+    });
   }
 
   function respond(key) {
@@ -267,7 +318,7 @@
       }
     }
     if (best >= 0) {
-      botSay(t.intents[best][1]);
+      botSay(smartAnswer(t.intents[best][1]));
       showQuick(false);
     } else {
       botSay(t.fallback);
@@ -282,6 +333,7 @@
 
   function openChat() {
     panel.hidden = false;
+    syncTopButton();
     btn.setAttribute('aria-expanded', 'true');
     if (!greeted) {
       greeted = true;
@@ -293,6 +345,7 @@
 
   function closeChat() {
     panel.hidden = true;
+    syncTopButton();
     btn.setAttribute('aria-expanded', 'false');
     btn.focus();
   }
@@ -311,5 +364,6 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !panel.hidden) closeChat();
   });
+  syncTopButton();
   if (window.__mentChatPendingOpen) openChat();
 })();
